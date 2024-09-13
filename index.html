@@ -1,0 +1,45 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Image Toggle with Sound</title>  
+</head>  
+<body>  
+  
+    <!-- 图片和音频元素 -->  
+    <img id="toggleImage" src="2.png" alt="Toggle Image" width="300" height="200">  
+    <audio id="soundEffect" src="C:\Users\student\Desktop\新建文件夹\1.html\标准录音 2.mp3" preload="auto"></audio>  
+  
+    <!-- JavaScript代码 -->  
+    <script>  
+        // 获取图片和音频元素  
+        var image = document.getElementById('toggleImage');  
+        var sound = document.getElementById('soundEffect');  
+  
+        // 定义图片URL  
+        var initialImageUrl = '2.png';  
+        var nextImageUrl = '1.png';  
+  
+        // 当前显示的图片URL  
+        var currentImageUrl = initialImageUrl;  
+  
+        // 为图片添加点击事件监听器  
+        image.addEventListener('click', function() {  
+            // 播放声音  
+            sound.play();  
+  
+            // 切换图片  
+            if (currentImageUrl === initialImageUrl) {  
+                currentImageUrl = nextImageUrl;  
+            } else {  
+                currentImageUrl = initialImageUrl;  
+            }  
+  
+            // 更新图片源  
+            image.src = currentImageUrl;  
+        });  
+    </script>  
+  
+</body>  
+</html>
